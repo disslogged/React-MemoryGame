@@ -1,0 +1,64 @@
+@import url("https://fonts.googleapis.com/css2?family=Paytone+One&family=Rye&display=swap");
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+body {
+  min-height: 100dvh;
+  overflow: hidden;
+  font-family: "Rye", serif;
+  letter-spacing: 2px;
+  width: 100dvw;
+  line-height: 1.6;
+}
+
+@layer components {
+  .card {
+    width: 100%;
+    height: 100%;
+    position: relative;
+    transform-style: preserve-3d;
+    transition: all 1s ease;
+  }
+}
+
+.front:hover {
+  transform: scale(1.1);
+}
+
+.card-active {
+  transform: perspective(400px) rotatey(180deg);
+}
+
+.front,
+.back {
+  position: absolute;
+  height: 100%;
+  width: 100%;
+  backface-visibility: hidden;
+  border-radius: 0.5rem;
+  transition: all 0.2s ease-in;
+}
+
+.back {
+  transform: rotateY(180deg);
+  z-index: 1717;
+}
+
+.animate {
+  animation: shaking 1s infinite;
+}
+
+@keyframes shaking {
+  0% {
+    transform: translateX(-8px) rotateY(0deg);
+  }
+
+  50% {
+    transform: translateX(8px) rotateY(180deg);
+  }
+
+  100% {
+    transform: translateX(-8px) rotateY(0deg);
+  }
+}
