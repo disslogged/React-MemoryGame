@@ -27,27 +27,29 @@ const GameStatus = ({ turns, remaining, resetGame }: Props) => {
       initial="init"
       animate="animate"
       transition={{ delay: 1.2, ease: "anticipate" }}
-      className="bg-gray-900 bg-opacity-50 backdrop-blur-sm flex items-center justify-between space-x-5 md:space-x-0 md:w-[50%] py-3 px-5 rounded-md text-white shadow-lg uppercase mx-auto"
+      className="w-full"
     >
-      <div className="flex items-center">
-        <PiArrowsCounterClockwiseDuotone className="text-blue-300 mr-2 text-3xl" />
-        <p className="font-bold">
-          Turns:{" "}
-          <span className="font-bold underline underline-offset-4">
-            {turns}
-          </span>
-        </p>
+      <div className="bg-gray-900 bg-opacity-50 backdrop-blur-sm flex flex-col sm:flex-row  items-center justify-between space-y-3 sm:space-y-0 py-3 px-5 rounded-md text-white shadow-lg uppercase mx-auto sm:w-[80%] md:w-[70%] lg:w-[50%]">
+        <div className="flex items-center">
+          <PiArrowsCounterClockwiseDuotone className="text-blue-300 mr-2 text-3xl" />
+          <p className="font-bold">
+            Turns:{" "}
+            <span className="font-bold underline underline-offset-4">
+              {turns}
+            </span>
+          </p>
+        </div>
+        <div className="flex items-center">
+          <TbViewfinder className="text-red-500 mr-2 text-3xl" />
+          <p className="font-bold">
+            Remaining:{" "}
+            <span className="font-bold underline underline-offset-4">
+              {remaining}
+            </span>
+          </p>
+        </div>
+        <ResetButton resetGame={resetGame}>Reset</ResetButton>
       </div>
-      <div className="flex items-center">
-        <TbViewfinder className="text-red-500 mr-2 text-3xl" />
-        <p className="font-bold">
-          Remaining:{" "}
-          <span className="font-bold underline underline-offset-4">
-            {remaining}
-          </span>
-        </p>
-      </div>
-      <ResetButton resetGame={resetGame}>Reset</ResetButton>
     </motion.div>
   );
 };

@@ -20,7 +20,7 @@ const UserWin = ({ resetGame, turns }: Props) => {
         variants={variants}
         animate="animate"
         transition={{ duration: 1, ease: "anticipate" }}
-        className="flex flex-col items-center justify-center h-full z-[1717]"
+        className="flex flex-col items-center justify-center h-full z-[1717] text-center"
       >
         <h2 className="text-3xl font-bold text-green-500">
           Congratulations! You won!
